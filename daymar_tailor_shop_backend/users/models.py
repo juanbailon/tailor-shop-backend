@@ -43,7 +43,7 @@ class CustomUser(AbstractUser, PermissionsMixin):
     
     USERNAME_FIELD = "email"
     #password is always required by default
-    REQUIRED_FIELDS = ['email']
+    REQUIRED_FIELDS = []
 
     objects = CustomUserManager()
 
