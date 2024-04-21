@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'simple_history',
 
     'users',
+    'raw_materials',
 
 ]
 
