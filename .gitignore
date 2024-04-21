@@ -1,7 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,django,linux,windows,venv
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,django,linux,windows,venv
 
+relation-schmea-db.png
+
 ### Django ###
+migrations/
 *.log
 *.pot
 *.pyc
