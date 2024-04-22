@@ -24,7 +24,7 @@ class RawMaterial(models.Model):
     material_type = models.CharField(choices = MATERIAL_TYPE, max_length = 30, null = False)
     remaining_amount = models.DecimalField(max_digits = 5, decimal_places = 2, null = False)
     unit_price = models.DecimalField(max_digits = 6, decimal_places = 2, null = False)
-    material_type = models.CharField(choices = MATERIAL_TYPE, max_length = 30, null = False)
+    unit_of_measure = models.CharField(choices = UNIT_OF_MEASURE, max_length = 30, null = False)
 
     class Meta:
         ordering = ["name"]
