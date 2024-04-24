@@ -6,27 +6,25 @@ from django.contrib.auth.password_validation import validate_password
 # Create your models here.
 
 class CustomUserManager(BaseUserManager):
-    def create_user(self, username, email, password, **extra_fields):
+    def create_user(self, email, password, **extra_fields):
         # Create and save a new user with the given email and password
         validate_password(password)
         
-        user = self.model(username= username, email=self.normalize_email(email), **extra_fields)
+        user = self.model(email=self.normalize_email(email), **extra_fields)
         user.set_password(password)
         user.save()   
         
         return user
 
-    def create_superuser(self, username, email, password, **extra_fields):
+    def create_superuser(self, email, password, **extra_fields):
         # Create and save a new superuser with the given email and password
         extra_fields['is_staff'] = True
         extra_fields['is_superuser'] = True
 
-        user = self.create_user(username=username,
-                                email=email,
+        user = self.create_user(email=email,
                                 password=password,
                                 **extra_fields
                                 )
-        
         return user
 
 

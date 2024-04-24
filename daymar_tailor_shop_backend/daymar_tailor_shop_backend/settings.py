@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 import os
+import dj_database_url
 
 from pathlib import Path
 from datetime import timedelta
@@ -164,17 +165,7 @@ available_databases = {
                 'TEST': {
                     'ENGINE': 'django.db.backends.sqlite3',
                 },
-            },
-
-    'production': {
-                'ENGINE': 'django.db.backends.postgresql',
-                'NAME': os.getenv('PRODUCTION_DB_NAME'),
-                'USER': os.getenv('PRODUCTION_DB_USER'),
-                'PASSWORD': os.getenv('PRODUCTION_DB_PASSWORD'),
-                'HOST': os.getenv('PRODUCTION_DB_HOST', 'localhost'),
-                'PORT': os.getenv('PRODUCTION_DB_PORT', '5432'),
-            },
-        
+            }  
 }
 
 
@@ -183,7 +174,7 @@ DATABASES = {}
 USE_PRODUCTION_DATABASE =  (os.getenv('USE_PRODUCTION_DATABASE').lower() == 'true')
 
 if USE_PRODUCTION_DATABASE:
-    DATABASES["default"] = available_databases["production"]
+    DATABASES["default"] = dj_database_url.parse(os.getenv('DATA_BASE_URL'))
 else:
     DATABASES["default"] = available_databases["local_development"]
 
@@ -223,6 +214,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
