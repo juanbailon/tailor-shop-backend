@@ -11,3 +11,5 @@ typing_extensions==4.11.0
 django-simple-history
 dj-database-url
 gunicorn
+drf-yasg
+setuptools

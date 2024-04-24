@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'simple_history',
+    'drf_yasg',
 
     'users',
     'raw_materials',
