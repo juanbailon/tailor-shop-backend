@@ -9,3 +9,9 @@ class CreateRawMaterialView(generics.CreateAPIView):
     queryset = RawMaterial.objects.all()
     serializer_class = RawMaterialSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+
+class ListRawMaterialsView(generics.ListAPIView):
+    queryset = RawMaterial.objects.all()
+    serializer_class = RawMaterialSerializer
+    permission_classes = [permissions.IsAuthenticated]
