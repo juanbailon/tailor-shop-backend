@@ -60,6 +60,7 @@ INSTALLED_APPS = [
 
     'users',
     'raw_materials',
+    'service',
 
 ]
 
