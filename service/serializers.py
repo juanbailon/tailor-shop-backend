@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Service
 
-class ServiceSerializer(serializers.ModelSerializer):
+class CreateServiceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Service
@@ -14,6 +14,19 @@ class ServiceSerializer(serializers.ModelSerializer):
         service = Service(**validated_data)
         service.save()
         return service
+    
+    
+class UpdateServiceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Service
+        fields = '__all__'
+        extra_kwargs = {
+            "client_name": {"required": False},
+            "client_phone": {"required": False},
+            "delivery_date": {"required": False},
+            "service_price": {"required": False},
+            "service_description": {"required": False},
+        }
     
     def update(self, instance, validated_data):
         instance.client_name = validated_data.get('client_name', instance.client_name)
