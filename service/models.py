@@ -17,3 +17,4 @@ class Service(models.Model):
     client_phone = models.CharField(null= False, blank=False, max_length=64)
     service_type = models.CharField(choices=SERVICE_TYPE, max_length=30, null=False)
     service_description = models.CharField(null=False, max_length= 100)
+    is_active = models.BooleanField(default=True, blank=False)
