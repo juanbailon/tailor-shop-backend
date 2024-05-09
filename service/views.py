@@ -11,12 +11,12 @@ class CreateServiceView(generics.CreateAPIView):
 
 class UpdateServiceView(generics.UpdateAPIView):
     serializer_class = UpdateServiceSerializer
-    queryset = Service.objects.all()
+    queryset = Service.objects.filter(is_active= True)
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = 'pk'
 
 class DeleteServiceView(generics.GenericAPIView):
-    queryset = Service.objects.all()
+    queryset = Service.objects.filter(is_active= True)
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = 'pk'
     serializer_class = CreateServiceSerializer
@@ -34,6 +34,6 @@ class DeleteServiceView(generics.GenericAPIView):
     
 
 class ListServiceView(generics.ListAPIView):
-    queryset = Service.objects.all()
+    queryset = Service.objects.filter(is_active= True)
     serializer_class = CreateServiceSerializer
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]

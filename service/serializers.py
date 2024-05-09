@@ -26,6 +26,7 @@ class UpdateServiceSerializer(serializers.ModelSerializer):
             "delivery_date": {"required": False},
             "service_price": {"required": False},
             "service_description": {"required": False},
+            "is_active": {"required": False},
         }
     
     def update(self, instance, validated_data):

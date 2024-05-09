@@ -17,7 +17,7 @@ class ListRawMaterialsView(generics.ListAPIView):
     """
     View to get a list of all RawMaterial objects.
     """
-    queryset = RawMaterial.objects.all()
+    queryset = RawMaterial.objects.filter(is_active= True)
     serializer_class = RawMaterialSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -26,7 +26,7 @@ class RetrieveUpdateRawMaterialView(generics.RetrieveUpdateAPIView):
     """
     View to get and update a specific RawMaterial object.
     """
-    queryset = RawMaterial.objects.all()
+    queryset = RawMaterial.objects.filter(is_active= True)
     serializer_class = UpdateRawMaterialSerializer
     permission_classes = [permissions.IsAuthenticated]
     lookup_url_kwarg = 'pk'
@@ -45,7 +45,7 @@ class DeleteRawMaterialView(generics.GenericAPIView):
     """
     View to change the activation status of a RawMaterial object.
     """
-    queryset = RawMaterial.objects.all()
+    queryset = RawMaterial.objects.filter(is_active= True)
     permission_classes = [permissions.IsAuthenticated]
     lookup_url_kwarg = 'pk'
     serializer_class = RawMaterialSerializer
