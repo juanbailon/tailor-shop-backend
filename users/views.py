@@ -41,7 +41,7 @@ class UpdateUserPasswordView(generics.UpdateAPIView):
     permission_classes = [permissions.IsAuthenticated]
     queryset = CustomUser.objects.all()
 
-    http_method_names = ['put'] # thsi makes only the PUT available and the PATCH inavailabe
+    http_method_names = ['put']
 
     def put(self, request, *args, **kwargs):
 
