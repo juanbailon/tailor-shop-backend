@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import RegisterServiceProcess
+from .views import RegisterServiceProcess, ListServiceProcessView
 
 urlpatterns = [
-    path('Register-service-process/', RegisterServiceProcess.as_view(), name='Register-Service-Process')
+    path('register/', RegisterServiceProcess.as_view(), name='register'),
+    path('list/', ListServiceProcessView.as_view(), name='list')
 ]
