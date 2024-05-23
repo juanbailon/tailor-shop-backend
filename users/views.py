@@ -11,7 +11,7 @@ from .serializers import (
 
 class CreateCustomUserView(generics.CreateAPIView):
     serializer_class = CustomUserSerializer
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class RetriveUpdateAndDeleteCustomUserView(generics.RetrieveUpdateDestroyAPIView):

@@ -4,10 +4,12 @@ from .serializers import CreateServiceSerializer, UpdateServiceSerializer
 from .models import Service
 from rest_framework.response import Response
 
+
 # Create your views here.
 class CreateServiceView(generics.CreateAPIView):
     serializer_class = CreateServiceSerializer
     permission_classes = [permissions.IsAuthenticated]
+
 
 class UpdateServiceView(generics.UpdateAPIView):
     serializer_class = UpdateServiceSerializer

@@ -30,11 +30,14 @@ class CustomUserManager(BaseUserManager):
 
 class CustomUser(AbstractUser, PermissionsMixin):
 
+    ROl_TYPE = (('Administrador','Administrador' ),('Operador','Operador'))
+
     first_name = None
     last_name = None
     username = None   
     email = models.EmailField(unique=True, blank=False, null=False) 
     password = models.CharField(max_length=200, validators=[validators.MinLengthValidator(8)])
+    rol = models.CharField(choices=ROl_TYPE,max_length= 30, blank=False, null=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     

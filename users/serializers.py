@@ -10,7 +10,8 @@ class CustomUserSerializer(serializers.ModelSerializer):
         model = CustomUser
         fields = ['id',
                   'email',
-                  'password', 
+                  'password',
+                  'rol' 
                  ]        
         extra_kwargs = {
             'id': {'read_only': True},
