@@ -40,6 +40,9 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('raw-materials/', include('raw_materials.urls')),
     path('service/', include('service.urls')),
+    path('process/', include('process.urls')),
+    path('service_process/', include('service_process.urls')),
+    path('service_raw_material/', include('service_raw_material.urls')),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
