@@ -12,7 +12,7 @@ class Service(models.Model):
 
     creation_date = models.DateField(null=False, default= datetime.date.today)
     delivery_date = models.DateField(null=False)
-    service_unit_price = models.IntegerField(null=False, blank=False)
+    service_unit_price = models.IntegerField(null=False, blank=False, default=0)
     client_name = models.CharField(null= False, blank=False, max_length=64)
     client_phone = models.CharField(null= False, blank=False, max_length=64)
     service_type = models.CharField(choices=SERVICE_TYPE, max_length=30, null=False)

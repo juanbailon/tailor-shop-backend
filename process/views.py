@@ -13,3 +13,4 @@ class CreateProcessView(generics.CreateAPIView):
 class ListProcessView(generics.ListAPIView):
     serializer_class = RawMaterialSerializer
     permission_classes = [permissions.IsAuthenticated]
+    
