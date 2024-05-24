@@ -13,6 +13,6 @@ class CreateProcessView(generics.CreateAPIView):
 
 class ListProcessView(generics.ListAPIView):
     queryset = Process.objects.all()
-    serializer_class = RawMaterialSerializer
+    serializer_class = ProcessSerializer
     permission_classes = [permissions.IsAuthenticated]
     
