@@ -54,3 +54,8 @@ class UpdateUserPasswordView(generics.UpdateAPIView):
         user.save()
 
         return Response({"message": "Password updated successfully"}, status=status.HTTP_200_OK)
+    
+class RetrieveAllUsersView(generics.ListAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = CustomUserSerializer
+    permission_classes = [permissions.IsAuthenticated]

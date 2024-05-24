@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import *
+from .views import RegisterServiceRawMaterialView
 
 urlpatterns = [
     path('register/', RegisterServiceRawMaterialView.as_view(), name='register'),
