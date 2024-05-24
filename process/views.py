@@ -3,6 +3,7 @@ from rest_framework import generics, permissions, status
 from process.models import Process
 from raw_materials.serializers import RawMaterialSerializer
 from .serializers import ProcessSerializer
+from .models import Process
 
 
 class CreateProcessView(generics.CreateAPIView):
@@ -11,6 +12,7 @@ class CreateProcessView(generics.CreateAPIView):
 
 
 class ListProcessView(generics.ListAPIView):
+    queryset = Process.objects.all()
     serializer_class = RawMaterialSerializer
     permission_classes = [permissions.IsAuthenticated]
     
