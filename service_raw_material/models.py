@@ -2,7 +2,7 @@ from django.db import models
 from raw_materials.models import RawMaterial
 from service.models import Service
 
-# Create your models here.
+
 class ServiceRawMaterial(models.Model):
     raw_material_id = models.ForeignKey(RawMaterial, on_delete=models.CASCADE,blank=False,null=False)
     service_id = models.ForeignKey(Service, on_delete=models.CASCADE, blank=False,null=False)

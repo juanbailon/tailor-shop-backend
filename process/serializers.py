@@ -10,4 +10,4 @@ class ProcessSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         process = Process(**validated_data)
         process.save()
-        return process 
+        return process
