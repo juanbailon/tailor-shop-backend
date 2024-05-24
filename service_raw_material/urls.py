@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import *
+from .views import RegisterServiceRawMaterialView
 
-utlpatterns = [
+urlpatterns = [
     path('register-service-rawmaterial/', RegisterServiceRawMaterialView.as_view(), name='register-service-rawmaterial')
 ]
