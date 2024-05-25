@@ -10,5 +10,6 @@ class RegisterServiceProcess(generics.CreateAPIView):
 
 
 class ListServiceProcessView(generics.ListAPIView):
-    serializer_class = ServiceProcess
+    queryset = ServiceProcess.objects.all()
+    serializer_class = ServiceProcessSerializer
     permission_classes = [permissions.IsAuthenticated]
