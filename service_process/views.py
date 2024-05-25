@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics, permissions
-from .serializers import ServiceProcessSerializer
+from .serializers import ServiceProcessSerializer, ServiceProcessInfoSerializer
 from .models import ServiceProcess
 
 
@@ -11,5 +11,5 @@ class RegisterServiceProcess(generics.CreateAPIView):
 
 class ListServiceProcessView(generics.ListAPIView):
     queryset = ServiceProcess.objects.all()
-    serializer_class = ServiceProcessSerializer
+    serializer_class = ServiceProcessInfoSerializer
     permission_classes = [permissions.IsAuthenticated]
