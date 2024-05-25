@@ -10,5 +10,6 @@ class RegisterServiceRawMaterialView(generics.CreateAPIView):
 
 
 class ListServiceRawMaterialView(generics.ListAPIView):
-    serializer_class = ServiceRawMaterial
+    queryset = ServiceRawMaterial.objects.all()
+    serializer_class = ServiceRawMaterialSerializer
     permission_classes = [permissions.IsAuthenticated]
