@@ -3,6 +3,8 @@ from rest_framework import generics, permissions, status
 from .serializers import CreateServiceSerializer, UpdateServiceSerializer
 from .models import Service
 from rest_framework.response import Response
+from django_filters import rest_framework as filters
+from .filters import ServiceFilter
 
 
 # Create your views here.
@@ -25,7 +27,7 @@ class DeleteServiceView(generics.GenericAPIView):
 
     def post(self, request, *args, **kwargs):
         """
-        Change the activation status of a RawMaterial object and return the serialized response.
+        Change the activation status of a Service object and return the serialized response.
         """
         instance = self.get_object()
         new_value = instance.is_active
@@ -39,3 +41,5 @@ class ListServiceView(generics.ListAPIView):
     queryset = Service.objects.filter(is_active= True)
     serializer_class = CreateServiceSerializer
     permission_classes = [permissions.IsAuthenticated]
+    filter_backends = [filters.DjangoFilterBackend]
+    filterset_class = ServiceFilter

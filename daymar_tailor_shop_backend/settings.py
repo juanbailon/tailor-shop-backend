@@ -63,7 +63,9 @@ INSTALLED_APPS = [
     'service',
     'service_raw_material',
     'service_process',
-    'process'
+    'process',
+
+    'django_filters'
 
 ]
 
