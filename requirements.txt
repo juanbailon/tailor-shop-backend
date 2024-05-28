@@ -14,3 +14,4 @@ gunicorn
 drf-yasg
 setuptools
 datetime
+django-filter
